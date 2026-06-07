@@ -41,25 +41,27 @@ interface Receipt {
   time: string
   associate: string
   branch: string
+
   items: Array<{
     id: number
+
     name: string
+    productCode: string
+    category: string
+
+    color: string
+    size: string
+
     description: string
+    composition: string
+
     price: number
     quantity: number
-    category?: string
-    taxApplicable?: boolean
-    baseAmount?: number
-    tax?: number
-    itemCode?: string
-    variant?: string
-    serialNumber?: string
-    warranty?: string
 
-    installationAvailable?: boolean
-    installationStatus?: string
-    installationScheduledDate?: string
+    baseAmount: number
+    tax: number
   }>
+
   subtotal: number
   tax: number
   total: number
@@ -241,169 +243,258 @@ export default function Home() {
 }, [currentReceiptId])
 
 const receipts = {
-
   current: {
-    id: "CRBLR7891XQ12",
+    id: "NXDEL8741MQ52",
     date: "05-03-2026",
     time: "19:22:18",
-    associate: "Rahul Kumar",
-    branch: "Brigade Road",
+    associate: "Priya Sharma",
+    branch: "Select Citywalk",
 
     items: [
       {
         id: 0,
-        name: "LG 1.5 Ton Dual Inverter Split AC",
-        variant: "5 Star 2026 Model",
-        description: "AI Convertible 6-in-1 cooling",
-        price: 46990,
-        quantity: 1,
-        category: "Air Conditioners",
-        baseAmount: 39822,
-        tax: 7168,
-        itemCode: "LGAC15INV26",
-        serialNumber: "LGAC15X9921",
-        warranty: "1 Year Product / 10 Year Compressor",
+        name: "Blue Straight Fit Motionflex Jeans",
+        productCode: "228-065",
+        category: "Men > Clothing > Jeans",
 
-        installationAvailable: true,
-        installationStatus: "Scheduled",
-        installationScheduledDate: "07 Mar 2026"
+        color: "Blue Mid Indigo",
+        size: "34R",
+
+        description:
+          "Motionflex performance denim with super-stretch comfort and shape retention.",
+        composition:
+          "66% Cotton, 22% Recycled Polyester, 10% Viscose, 2% Elastane",
+
+        price: 4117,
+        quantity: 1,
+
+        baseAmount: 3489,
+        tax: 628
       },
 
       {
         id: 1,
-        name: "Apple AirPods (3rd Generation)",
-        variant: "Wireless Charging Case",
-        description: "Spatial audio with dynamic head tracking",
-        price: 19900,
+        name: "White Floral Puff Sleeve Midi Dress",
+        productCode: "Y13-574",
+        category: "Women > Clothing > Dresses",
+
+        color: "White Floral",
+        size: "12",
+
+        description:
+          "Cotton puff sleeve midi dress with square neckline and side pockets.",
+        composition:
+          "Main 100% Cotton, Lining 100% Cotton",
+
+        price: 6200,
         quantity: 1,
-        category: "Audio",
-        baseAmount: 16864,
-        tax: 3036,
-        itemCode: "AIRPODS3",
-        serialNumber: "APD3X77P21",
-        warranty: "1 Year Apple Warranty"
+
+        baseAmount: 5254,
+        tax: 946
+      },
+
+      {
+        id: 2,
+        name: "Pink Baby Bunny Sleepsuits 3 Pack",
+        productCode: "H44-213",
+        category: "Baby > Nightwear > Sleepsuits",
+
+        color: "Pink",
+        size: "12-18 Months",
+
+        description:
+          "Soft cotton bunny print sleepsuits with popper fastening.",
+        composition: "100% Cotton",
+
+        price: 2911,
+        quantity: 1,
+
+        baseAmount: 2467,
+        tax: 444
       }
     ],
 
-    subtotal: 56686,
-    tax: 10204,
-    total: 66890
+    subtotal: 11210,
+    tax: 2018,
+    total: 13228
   },
-
 
   hist1: {
-    id: "CRBLR6719YT92",
+    id: "NXDEL5521JT91",
     date: "20-01-2026",
     time: "14:22:18",
-    associate: "Anita Sharma",
-    branch: "Indiranagar",
+    associate: "Anita Mehta",
+    branch: "DLF Mall of India",
 
     items: [
       {
         id: 0,
-        name: "Samsung 55\" Crystal 4K UHD Smart TV",
-        variant: "CU7700 55 inch",
-        description: "Crystal Processor 4K with HDR10+",
-        price: 54990,
-        quantity: 1,
-        category: "Televisions",
-        baseAmount: 46517,
-        tax: 8473,
-        itemCode: "SAM55CU7700",
-        serialNumber: "SAMTV55CU7721",
-        warranty: "1 Year Samsung Warranty",
+        name: "Blue Mid Slim Fit Classic Stretch Jeans",
+        productCode: "530-205",
+        category: "Men > Clothing > Jeans",
 
-        installationAvailable: true,
-        installationStatus: "Completed",
-        installationScheduledDate: "22 Jan 2026"
+        color: "Blue Mid",
+        size: "32R",
+
+        description:
+          "Comfort stretch denim with soft finish and five-pocket design.",
+        composition:
+          "99% Cotton, 1% Elastane",
+
+        price: 3033,
+        quantity: 1,
+
+        baseAmount: 2570,
+        tax: 463
       },
 
       {
         id: 1,
-        name: "Amazon Fire TV Stick 4K",
-        variant: "4K Streaming",
-        description: "Dolby Vision with Alexa Voice Remote",
-        price: 5999,
+        name: "Bright Pink Square Neck Cami Midi Dress",
+        productCode: "Y35-886",
+        category: "Women > Clothing > Dresses",
+
+        color: "Bright Pink",
+        size: "10",
+
+        description:
+          "Lightweight cami midi dress with shirred back and side pockets.",
+        composition:
+          "55% Linen, 45% LENZING™ ECOVERO™ Viscose",
+
+        price: 4871,
         quantity: 1,
-        category: "Streaming Devices",
-        baseAmount: 5084,
-        tax: 915,
-        itemCode: "AMZFTV4K",
-        serialNumber: "AMZ4KTV881",
-        warranty: "1 Year Warranty"
+
+        baseAmount: 4128,
+        tax: 743
+      },
+
+      {
+        id: 2,
+        name: "Neutral Baby Sleepsuits 3 Pack",
+        productCode: "AA5-969",
+        category: "Baby > Nightwear > Sleepsuits",
+
+        color: "Neutral",
+        size: "6-9 Months",
+
+        description:
+          "Super-soft cotton sleepsuits in neutral tones.",
+        composition: "100% Cotton",
+
+        price: 2668,
+        quantity: 1,
+
+        baseAmount: 2261,
+        tax: 407
       }
     ],
 
-    subtotal: 51601,
-    tax: 9388,
-    total: 60989
+    subtotal: 8959,
+    tax: 1613,
+    total: 10572
   },
 
-
   hist2: {
-    id: "CRBLR5590LP33",
+    id: "NXDEL3387KP44",
     date: "15-12-2025",
     time: "12:45:33",
-    associate: "Sanjay Reddy",
-    branch: "Koramangala",
+    associate: "Rohit Verma",
+    branch: "Phoenix Palladium",
 
     items: [
       {
         id: 0,
-        name: "Kent RO Water Purifier",
-        variant: "Grand Plus RO + UV",
-        description: "RO+UV+UF purification with TDS control",
-        price: 18990,
-        quantity: 1,
-        category: "Water Purifiers",
-        baseAmount: 16093,
-        tax: 2897,
-        itemCode: "KENTGRANDPLUS",
-        serialNumber: "KENTRO8891",
-        warranty: "1 Year Kent Warranty",
+        name: "Dark Blue Straight Fit Belted Authentic Jeans",
+        productCode: "933-227",
+        category: "Men > Clothing > Jeans",
 
-        installationAvailable: true,
-        installationStatus: "Completed",
-        installationScheduledDate: "16 Dec 2025"
+        color: "Dark Blue",
+        size: "36R",
+
+        description:
+          "Authentic stretch denim jeans supplied with matching belt.",
+        composition:
+          "99% Cotton, 1% Elastane",
+
+        price: 4875,
+        quantity: 1,
+
+        baseAmount: 4131,
+        tax: 744
       },
 
       {
         id: 1,
-        name: "Logitech MX Master 3S Mouse",
-        variant: "Wireless Bluetooth",
-        description: "Advanced productivity mouse",
-        price: 9995,
+        name: "Chocolate Brown Jersey Two In One T-Shirt Dress",
+        productCode: "W75-765",
+        category: "Women > Clothing > Dresses",
+
+        color: "Chocolate Brown",
+        size: "14",
+
+        description:
+          "Two-in-one dress combining cotton top and flowing viscose skirt.",
+        composition:
+          "Top 100% Cotton, Skirt 82% Livaeco™ Viscose, 18% Nylon",
+
+        price: 4428,
         quantity: 1,
-        category: "Computer Accessories",
-        baseAmount: 8461,
-        tax: 1534,
-        itemCode: "LOGMXM3S",
-        serialNumber: "LOGM3S9901",
-        warranty: "1 Year Logitech Warranty"
+
+        baseAmount: 3753,
+        tax: 675
+      },
+
+      {
+        id: 2,
+        name: "Red/Pink Two Way Zip Baby Sleepsuits 4 Pack",
+        productCode: "W91-634",
+        category: "Baby > Nightwear > Sleepsuits",
+
+        color: "Red/Pink",
+        size: "18-24 Months",
+
+        description:
+          "Four-pack cotton sleepsuits with two-way zip fastening.",
+        composition: "100% Cotton",
+
+        price: 3275,
+        quantity: 1,
+
+        baseAmount: 2775,
+        tax: 500
       }
     ],
 
-    subtotal: 24554,
-    tax: 4431,
-    total: 28985
+    subtotal: 10659,
+    tax: 1919,
+    total: 12578
   }
-
-};
-  
+};  
   const currentReceipt = receipts[currentReceiptId]
 
   const totalSlides = 2
 
-  const transactionHistory = [
-    {
-      id: "current",
-      date: "05-03-2026",
-      branch: "Croma",
-      amount: currentReceiptId === "current" ? receipts.current.subtotal + receipts.current.tax : 66890.00,
-    },
-    { id: "hist1", date: "20-01-2026", branch: "Croma", amount: 60989.00 },
-    { id: "hist2", date: "15-12-2025", branch: "Croma", amount: 28985.00 },
-  ]
+ const transactionHistory = [
+  {
+    id: "current",
+    date: "05-03-2026",
+    branch: "Next",
+    amount: 13228.00,
+  },
+  {
+    id: "hist1",
+    date: "20-01-2026",
+    branch: "Next",
+    amount: 10572.00,
+  },
+  {
+    id: "hist2",
+    date: "15-12-2025",
+    branch: "Next",
+    amount: 12578.00,
+  }
+]
 
   const toggleProductExpansion = (productId: number) => {
     setExpandedProducts((prev) =>
