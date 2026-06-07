@@ -1594,117 +1594,123 @@ Powered by RDEP
 
 </div>
           
-{/* Promo Banner Carousel */}
-
+{/* Promotional Banner Carousel */}
 <div className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden mx-3 mt-4 relative">
 
-<Carousel
-className="w-full"
-setApi={setPromoApi}
-opts={{
-loop: true,
-}}
+  <Carousel
+    className="w-full"
+    setApi={setPromoApi}
+    opts={{
+      loop: true,
+    }}
+  >
 
->
+    <CarouselContent>
 
-<CarouselContent>
+      {/* Women's New Arrivals */}
+      <CarouselItem>
 
-  {/* Banner 1 */}
-  <CarouselItem>
+        <a
+          href="https://www.nextdirect.com/in/en/shop/womens/f/feat-newin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full"
+        >
 
-    <a
-      href="https://www.croma.com/lp-flash-sale"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full"
-    >
+          <div className="aspect-[1890/666] w-full overflow-hidden">
 
-      <Image
-        src="/images/design-mode/Croma_Banner_1.png"
-        alt="Croma Flash Sale"
-        width={1000}
-        height={600}
-        className="w-full h-auto object-contain"
-        priority
-      />
+            <Image
+              src="/images/design-mode/next-banner-1.png"
+              alt="Women's New Arrivals"
+              width={1890}
+              height={666}
+              priority
+              className="w-full h-full object-cover"
+            />
 
-    </a>
+          </div>
 
-  </CarouselItem>
+        </a>
 
+      </CarouselItem>
 
-  {/* Banner 2 */}
-  <CarouselItem>
+      {/* Baby New Arrivals */}
+      <CarouselItem>
 
-    <a
-      href="https://www.croma.com/lp-weekly-circuit"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full"
-    >
+        <a
+          href="https://www.nextdirect.com/in/en/shop/baby/f/feat-newin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full"
+        >
 
-      <Image
-        src="/images/design-mode/Croma_Banner_2.png"
-        alt="Croma Weekly Circuit"
-        width={1000}
-        height={600}
-        className="w-full h-auto object-contain"
-      />
+          <div className="aspect-[1890/666] w-full overflow-hidden">
 
-    </a>
+            <Image
+              src="/images/design-mode/next-banner-2.png"
+              alt="Baby New Arrivals"
+              width={1890}
+              height={666}
+              className="w-full h-full object-cover"
+            />
 
-  </CarouselItem>
+          </div>
 
+        </a>
 
-  {/* Banner 3 */}
-  <CarouselItem>
+      </CarouselItem>
 
-    <a
-      href="https://www.croma.com/campaign/best-deals-on-acs/c/5842?q=%3Arelevance%3Alower_categories%3A867"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block w-full"
-    >
+      {/* Men's New Arrivals */}
+      <CarouselItem>
 
-      <Image
-        src="/images/design-mode/Croma_Banner_3.png"
-        alt="Croma AC Deals"
-        width={1000}
-        height={600}
-        className="w-full h-auto object-contain"
-      />
+        <a
+          href="https://www.nextdirect.com/in/en/shop/mens/f/feat-newin"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full"
+        >
 
-    </a>
+          <div className="aspect-[1890/666] w-full overflow-hidden">
 
-  </CarouselItem>
+            <Image
+              src="/images/design-mode/next-banner-3.png"
+              alt="Men's New Arrivals"
+              width={1890}
+              height={666}
+              className="w-full h-full object-cover"
+            />
 
-</CarouselContent>
+          </div>
 
+        </a>
 
-{/* Pagination Dots */}
-<div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+      </CarouselItem>
 
-  {[0, 1, 2].map((index) => (
+    </CarouselContent>
 
-    <button
-      key={index}
-      onClick={() => promoApi?.scrollTo(index)}
-      className={`h-1.5 rounded-full transition-all duration-300 ${
-        currentSlide === index
-          ? "w-5 bg-[#2CBC9C]"
-          : "w-1.5 bg-white/70"
-      }`}
-    />
+    {/* Pagination Dots */}
+    <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
 
-  ))}
+      {[0, 1, 2].map((index) => (
 
-</div>
+        <button
+          key={index}
+          onClick={() => promoApi?.scrollTo(index)}
+          className={`h-1.5 rounded-full transition-all duration-300 ${
+            currentSlide === index
+              ? "w-5 bg-[#222222]"
+              : "w-1.5 bg-white/80"
+          }`}
+        />
 
+      ))}
+
+    </div>
 
   </Carousel>
 
 </div>
-
+          
          {/* Returns & Exchanges */}
 <div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
@@ -2327,13 +2333,12 @@ loop: true,
 </div>
           
 {/* Exclusive Offers Section */}
-
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
   {/* Header */}
   <div className="flex items-center mb-4">
 
-    <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
+    <div className="bg-[#222222] p-2 rounded-lg mr-3">
       <Sparkles className="h-4 w-4 text-white" />
     </div>
 
@@ -2343,22 +2348,19 @@ loop: true,
 
   </div>
 
-
   {/* Inline Toast */}
   {couponToast && (
     <div className="mb-3 text-center text-xs text-green-700 bg-green-50 border border-green-100 rounded-lg py-2">
-      ✓ Coupon <span className="font-semibold">{couponToast}</span> copied
+      ✓ Offer code <span className="font-semibold">{couponToast}</span> copied
     </div>
   )}
 
-
   <div className="space-y-3">
-
 
     {/* Offer 1 */}
     <button
-      onClick={() => copyCoupon("AC_WARRANTY")}
-      className="w-full bg-[#F1FBF8] border border-[#D6F2EC] rounded-xl p-3 text-left active:scale-[0.99]"
+      onClick={() => copyCoupon("DENIM15")}
+      className="w-full bg-[#F8F8F8] border border-gray-200 rounded-xl p-3 text-left active:scale-[0.99]"
     >
 
       <div className="flex items-center justify-between">
@@ -2366,30 +2368,29 @@ loop: true,
         <div>
 
           <h4 className="text-sm font-semibold text-gray-900">
-            Extend Your AC Warranty
+            15% Off Selected Denim
           </h4>
 
           <p className="text-[11px] text-gray-500">
-            Get up to <span className="font-semibold text-[#2CBC9C]">20% off</span> on extended protection plans
+            Save on selected men's and women's denim styles.
           </p>
 
           <p className="text-[11px] mt-1 text-gray-600">
-            Use code <span className="font-semibold text-[#2CBC9C]">AC_WARRANTY</span>
+            Use code <span className="font-semibold text-[#222222]">DENIM15</span>
           </p>
 
         </div>
 
-        <ShieldCheck className="h-5 w-5 text-[#2CBC9C]" />
+        <Shirt className="h-5 w-5 text-[#222222]" />
 
       </div>
 
     </button>
-
 
     {/* Offer 2 */}
     <button
-      onClick={() => copyCoupon("AC_STABILIZER")}
-      className="w-full bg-[#F1FBF8] border border-[#D6F2EC] rounded-xl p-3 text-left active:scale-[0.99]"
+      onClick={() => copyCoupon("SUMMER10")}
+      className="w-full bg-[#F8F8F8] border border-gray-200 rounded-xl p-3 text-left active:scale-[0.99]"
     >
 
       <div className="flex items-center justify-between">
@@ -2397,30 +2398,29 @@ loop: true,
         <div>
 
           <h4 className="text-sm font-semibold text-gray-900">
-            Special Price on AC Stabilizers
+            Summer Collection Offer
           </h4>
 
           <p className="text-[11px] text-gray-500">
-            Protect your AC with stabilizers starting at ₹1,499
+            Extra 10% off selected dresses, tops and seasonal styles.
           </p>
 
           <p className="text-[11px] mt-1 text-gray-600">
-            Use code <span className="font-semibold text-[#2CBC9C]">AC_STABILIZER</span>
+            Use code <span className="font-semibold text-[#222222]">SUMMER10</span>
           </p>
 
         </div>
 
-        <PlugZap className="h-5 w-5 text-[#2CBC9C]" />
+        <Sparkles className="h-5 w-5 text-[#222222]" />
 
       </div>
 
     </button>
 
-
     {/* Offer 3 */}
     <button
-      onClick={() => copyCoupon("AIRPODS_CASE")}
-      className="w-full bg-[#F1FBF8] border border-[#D6F2EC] rounded-xl p-3 text-left active:scale-[0.99]"
+      onClick={() => copyCoupon("BABY20")}
+      className="w-full bg-[#F8F8F8] border border-gray-200 rounded-xl p-3 text-left active:scale-[0.99]"
     >
 
       <div className="flex items-center justify-between">
@@ -2428,20 +2428,20 @@ loop: true,
         <div>
 
           <h4 className="text-sm font-semibold text-gray-900">
-            Protect Your AirPods
+            Baby Essentials Savings
           </h4>
 
           <p className="text-[11px] text-gray-500">
-            Premium protective cases starting from ₹799
+            Enjoy 20% off selected baby clothing and essentials.
           </p>
 
           <p className="text-[11px] mt-1 text-gray-600">
-            Use code <span className="font-semibold text-[#2CBC9C]">AIRPODS_CASE</span>
+            Use code <span className="font-semibold text-[#222222]">BABY20</span>
           </p>
 
         </div>
 
-        <Headphones className="h-5 w-5 text-[#2CBC9C]" />
+        <Gift className="h-5 w-5 text-[#222222]" />
 
       </div>
 
@@ -2449,309 +2449,143 @@ loop: true,
 
   </div>
 
-
   {/* CTA */}
   <a
-    href="https://www.croma.com/"
+    href="https://www.nextdirect.com/in/en"
     target="_blank"
     rel="noopener noreferrer"
   >
 
-    <button className="w-full mt-4 bg-[#2CBC9C] text-white h-10 text-xs font-semibold rounded-xl transition active:scale-[0.98]">
-      Explore More Offers
+    <button className="w-full mt-4 bg-[#222222] text-white h-10 text-xs font-semibold rounded-xl transition active:scale-[0.98]">
+      Shop New Arrivals
     </button>
 
   </a>
 
-
   <p className="mt-2 text-[9px] text-center text-gray-400">
-    Offers based on your recent purchase. Availability may vary by location.
+    Selected offers available for a limited time. Terms and conditions apply.
   </p>
 
 </div>
+              
+         {/* Receipt Actions */}
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
-        {/* Discover More Section */}
+  <div className="grid grid-cols-3 gap-3">
 
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
+    {/* Purchase History */}
+    <button
+      ref={historyButtonRef}
+      onClick={handleTransactionHistoryOpen}
+      className="flex flex-col items-center justify-center bg-[#F8F8F8] border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
+    >
+
+      <History className="h-5 w-5 text-[#222222] mb-1" />
+
+      <span className="text-[11px] font-medium text-gray-700">
+        History
+      </span>
+
+    </button>
+
+    {/* Email Receipt */}
+    <button
+      onClick={handleEmailReceipt}
+      className="flex flex-col items-center justify-center bg-[#F8F8F8] border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
+    >
+
+      <Mail className="h-5 w-5 text-[#222222] mb-1" />
+
+      <span className="text-[11px] font-medium text-gray-700">
+        Email
+      </span>
+
+    </button>
+
+    {/* Download Receipt */}
+    <button
+      onClick={handleDownloadReceipt}
+      className="flex flex-col items-center justify-center bg-[#F8F8F8] border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
+    >
+
+      <Download className="h-5 w-5 text-[#222222] mb-1" />
+
+      <span className="text-[11px] font-medium text-gray-700">
+        Download
+      </span>
+
+    </button>
+
+  </div>
+
+</div>
+
+
+{/* Need Help Section */}
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
   {/* Header */}
-  <div className="flex items-center mb-4">
+  <div className="flex items-center mb-3">
 
-    <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-      <Sparkles className="h-4 w-4 text-white" />
+    <div className="bg-[#222222] p-2 rounded-lg mr-3">
+      <Headset className="h-4 w-4 text-white" />
     </div>
 
-    <h3 className="text-base font-semibold text-gray-900">
-      Discover More
+    <h3 className="text-sm font-semibold text-gray-900">
+      Need Help?
     </h3>
 
   </div>
 
+  <div className="grid grid-cols-3 gap-3">
 
-  {/* Category Grid */}
-  <div className="grid grid-cols-2 gap-3">
-
-    {/* Smartphones */}
-    <a
-      href="https://www.croma.com/phones-wearables/mobile-phones/c/10"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border border-gray-200 rounded-xl p-3 text-center bg-gray-50 active:scale-[0.98]"
+    {/* Live Chat */}
+    <button
+      onClick={handleWhatsApp}
+      className="flex flex-col items-center justify-center bg-[#F8F8F8] border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
     >
 
-      <Image
-        src="/images/design-mode/Smartphones.png"
-        alt="Smartphones"
-        width={120}
-        height={90}
-        className="mx-auto object-contain"
-      />
+      <MessageSquare className="h-5 w-5 text-[#222222] mb-1" />
 
-      <div className="text-xs font-semibold text-gray-800 mt-2">
-        Smartphones
-      </div>
+      <span className="text-[11px] font-medium text-gray-700">
+        Chat
+      </span>
 
-    </a>
-
-
-    {/* Televisions */}
-    <a
-      href="https://www.croma.com/televisions-accessories/c/997"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border border-gray-200 rounded-xl p-3 text-center bg-gray-50 active:scale-[0.98]"
-    >
-
-      <Image
-        src="/images/design-mode/Television.png"
-        alt="Televisions"
-        width={120}
-        height={90}
-        className="mx-auto object-contain"
-      />
-
-      <div className="text-xs font-semibold text-gray-800 mt-2">
-        Televisions
-      </div>
-
-    </a>
-
-
-    {/* Kitchen Appliances */}
-    <a
-      href="https://www.croma.com/kitchen-appliances/c/864"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border border-gray-200 rounded-xl p-3 text-center bg-gray-50 active:scale-[0.98]"
-    >
-
-      <Image
-        src="/images/design-mode/Kitchen.png"
-        alt="Kitchen Appliances"
-        width={120}
-        height={90}
-        className="mx-auto object-contain"
-      />
-
-      <div className="text-xs font-semibold text-gray-800 mt-2">
-        Kitchen Appliances
-      </div>
-
-    </a>
-
-
-    {/* Home Appliances */}
-    <a
-      href="https://www.croma.com/home-appliances/c/5"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border border-gray-200 rounded-xl p-3 text-center bg-gray-50 active:scale-[0.98]"
-    >
-
-      <Image
-        src="/images/design-mode/Home.png"
-        alt="Home Appliances"
-        width={120}
-        height={90}
-        className="mx-auto object-contain"
-      />
-
-      <div className="text-xs font-semibold text-gray-800 mt-2">
-        Home Appliances
-      </div>
-
-    </a>
-
-
-    {/* Computers & Tablets */}
-    <a
-      href="https://www.croma.com/computers-tablets/c/3"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border border-gray-200 rounded-xl p-3 text-center bg-gray-50 active:scale-[0.98]"
-    >
-
-      <Image
-        src="/images/design-mode/Computer.png"
-        alt="Computers"
-        width={120}
-        height={90}
-        className="mx-auto object-contain"
-      />
-
-      <div className="text-xs font-semibold text-gray-800 mt-2">
-        Computers & Tablets
-      </div>
-
-    </a>
-
-
-    {/* Audio & Video */}
-    <a
-      href="https://www.croma.com/audio-video/c/292"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="border border-gray-200 rounded-xl p-3 text-center bg-gray-50 active:scale-[0.98]"
-    >
-
-      <Image
-        src="/images/design-mode/Audio.png"
-        alt="Audio & Video"
-        width={120}
-        height={90}
-        className="mx-auto object-contain"
-      />
-
-      <div className="text-xs font-semibold text-gray-800 mt-2">
-        Audio & Video
-      </div>
-
-    </a>
-
-  </div>
-
-
-  {/* CTA */}
-  <a
-    href="https://www.croma.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-
-    <button className="w-full mt-4 bg-[#2CBC9C] text-white h-10 text-xs font-semibold rounded-xl active:scale-[0.98]">
-      Explore More on Croma
     </button>
 
-  </a>
+    {/* Call */}
+    <button
+      onClick={handleCall}
+      className="flex flex-col items-center justify-center bg-[#F8F8F8] border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
+    >
 
-</div>
-          
-          
-         {/* Receipt Actions */}
+      <Phone className="h-5 w-5 text-[#222222] mb-1" />
 
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
+      <span className="text-[11px] font-medium text-gray-700">
+        Call
+      </span>
 
-  <div className="grid grid-cols-3 gap-3">
-{/* Purchase History */}
-<button
-  ref={historyButtonRef}
-  onClick={handleTransactionHistoryOpen}
-  className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
->
-  <History className="h-5 w-5 text-[#2CBC9C] mb-1" />
-  <span className="text-[11px] font-medium text-gray-700">
-    History
-  </span>
-</button>
+    </button>
 
+    {/* Returns */}
+    <button
+      onClick={handleEmail}
+      className="flex flex-col items-center justify-center bg-[#F8F8F8] border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
+    >
 
-{/* Email Receipt */}
-<button
-  onClick={handleEmailReceipt}
-  className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
->
-  <Mail className="h-5 w-5 text-[#2CBC9C] mb-1" />
-  <span className="text-[11px] font-medium text-gray-700">
-    Email
-  </span>
-</button>
+      <RotateCcw className="h-5 w-5 text-[#222222] mb-1" />
 
+      <span className="text-[11px] font-medium text-gray-700">
+        Returns
+      </span>
 
-{/* Download Receipt */}
-<button
-  onClick={handleDownloadReceipt}
-  className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
->
-  <Download className="h-5 w-5 text-[#2CBC9C] mb-1" />
-  <span className="text-[11px] font-medium text-gray-700">
-    Download
-  </span>
-</button>
+    </button>
 
   </div>
 
 </div>
 
           
-       {/* Need Help Section */}
-
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
-
-{/* Header */}
-
-  <div className="flex items-center mb-3">
-
-<div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-  <Send className="h-4 w-4 text-white" />
-</div>
-
-<h3 className="text-sm font-semibold text-gray-900">
-  Need Help?
-</h3>
-
-  </div>
-
-  <div className="grid grid-cols-3 gap-3">
-
-{/* Chat Support */}
-<button
-  onClick={handleWhatsApp}
-  className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
->
-  <MessageSquare className="h-5 w-5 text-[#2CBC9C] mb-1" />
-  <span className="text-[11px] font-medium text-gray-700">
-    Chat
-  </span>
-</button>
-
-
-{/* Call Support */}
-<button
-  onClick={handleCall}
-  className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
->
-  <Phone className="h-5 w-5 text-[#2CBC9C] mb-1" />
-  <span className="text-[11px] font-medium text-gray-700">
-    Call
-  </span>
-</button>
-
-
-{/* Service Request */}
-<button
-  onClick={handleEmail}
-  className="flex flex-col items-center justify-center bg-gray-50 border border-gray-200 rounded-xl py-3 active:scale-[0.98]"
->
-  <Wrench className="h-5 w-5 text-[#2CBC9C] mb-1" />
-  <span className="text-[11px] font-medium text-gray-700">
-    Service
-  </span>
-</button>
-
-  </div>
-
-</div>
-
 
       {/* Social Media & Store Details */}
 
