@@ -925,13 +925,13 @@ Powered by RDEP
 
       {/* Logo */}
       <img
-        src="https://media-ik.croma.com/prod/https://media.tatacroma.com/Croma%20Assets/CMS/Category%20icon/Final%20icon/Croma_Logo_acrkvn.svg"
-        alt="Croma"
-        className="h-10 w-auto"
+        src="/images/design-mode/new-next-black-logo.svg"
+        alt="Next"
+        className="h-8 w-auto"
       />
 
       {/* QR */}
-      <div className="bg-white rounded-xl p-2 shadow-sm">
+      <div className="bg-white rounded-lg p-2 border border-gray-200">
         <Image
           src="/images/design-mode/800px-QR_code_for_mobile_English_Wikipedia.svg.png"
           alt="QR Code"
@@ -942,81 +942,76 @@ Powered by RDEP
 
     </div>
 
-
     {/* Greeting */}
     <div className="mt-4">
-      <div className="text-lg font-semibold">
-        Thank you {customerName}
+      <div className="text-lg font-medium tracking-wide">
+        Thank you, {customerName}
       </div>
 
-      <div className="text-sm text-gray-300">
-        We hope to see you again soon!
+      <div className="text-sm text-gray-400">
+        Your purchase has been successfully completed.
       </div>
     </div>
 
-
     {/* Amount Card */}
-    <div className="mt-4 bg-gradient-to-r from-[#2CBC9C] to-[#46A9A3] rounded-xl p-4 flex justify-between items-center">
+    <div className="mt-4 bg-white rounded-xl border border-gray-200 p-4 flex justify-between items-center">
 
       <div>
-        <div className="text-xs text-white/90">
+        <div className="text-xs uppercase tracking-wider text-gray-500">
           Total Amount Paid
         </div>
 
-        <div className="text-3xl font-semibold text-white">
+        <div className="text-3xl font-semibold text-black">
           ₹{currentReceipt.total.toLocaleString("en-IN")}
         </div>
       </div>
 
-      <ShoppingBagIcon className="h-7 w-7 text-white/90" />
+      <ShoppingBagIcon className="h-7 w-7 text-black" />
 
     </div>
 
-  </div>  {/* ✅ THIS WAS MISSING */}
-
+  </div>
 
   {/* Receipt Metadata */}
   <div className="p-4 bg-white">
 
-    <div className="bg-[#E8F7F4] rounded-xl border border-[#CFEDEA] p-3 space-y-2">
+    <div className="bg-[#F8F8F8] rounded-xl border border-gray-200 p-3 space-y-3">
 
       {/* Receipt ID */}
       <div className="flex justify-between items-center">
 
-        <span className="text-xs text-gray-600">
+        <span className="text-xs text-gray-500">
           Receipt ID
         </span>
 
-        <span className="text-sm font-semibold tracking-wide text-right">
+        <span className="text-sm font-semibold tracking-wide text-right text-gray-900">
           {currentReceipt.id}
         </span>
 
       </div>
 
-
       {/* Date & Time */}
       <div className="flex justify-between items-center">
 
-        <span className="text-xs text-gray-600">
+        <span className="text-xs text-gray-500">
           Date & Time
         </span>
 
-        <span className="text-sm font-semibold text-right">
+        <span className="text-sm font-semibold text-right text-gray-900">
           {currentReceipt.date} {currentReceipt.time}
         </span>
 
       </div>
 
-
       {/* Store */}
       <div className="flex justify-between items-center">
 
-        <span className="text-xs text-gray-600">
+        <span className="text-xs text-gray-500">
           Store
         </span>
 
-        <span className="text-sm font-semibold text-right">
-          Croma {currentReceipt.branch}
+        <span className="text-sm font-semibold text-right text-gray-900">
+          Next {currentReceipt.branch}
         </span>
 
       </div>
