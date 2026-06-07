@@ -251,7 +251,7 @@ const receipts = {
     date: "05-03-2026",
     time: "19:22:18",
     associate: "Priya Sharma",
-    branch: "Select Citywalk",
+    branch: "UB City",
 
     items: [
       {
@@ -327,7 +327,7 @@ const receipts = {
     date: "20-01-2026",
     time: "14:22:18",
     associate: "Anita Mehta",
-    branch: "DLF Mall of India",
+    branch: "Business Tower",
 
     items: [
       {
@@ -403,7 +403,7 @@ const receipts = {
     date: "15-12-2025",
     time: "12:45:33",
     associate: "Rohit Verma",
-    branch: "Phoenix Palladium",
+    branch: "UB City",
 
     items: [
       {
