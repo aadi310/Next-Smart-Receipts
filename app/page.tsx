@@ -1997,279 +1997,330 @@ loop: true,
   )}
 
 </div>
+          
+      {/* Create Account / Member Benefits */}
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
-          {/* Tata Neu App Section */}
+  {profileUpdateSuccess ? (
 
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
+    <div className="text-center py-5 bg-[#F8F8F8] rounded-xl border border-gray-200">
 
-  <div className="flex items-center mb-3">
+      <div className="w-12 h-12 bg-[#222222] rounded-full flex items-center justify-center mx-auto mb-3">
 
-    <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-      <Smartphone className="h-4 w-4 text-white" />
-    </div>
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2.5"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
 
-    <div>
-      <div className="text-sm font-semibold text-gray-900">
-        Get More with Tata Neu
       </div>
 
-      <div className="text-xs text-gray-500">
-        Earn rewards and manage all your Tata purchases
+      <div className="text-sm font-semibold text-gray-900 mb-1">
+        Account Details Saved
       </div>
+
+      <div className="text-xs text-gray-600">
+        Your information is now linked to this order for easier tracking, returns and future purchases.
+      </div>
+
     </div>
 
-  </div>
+  ) : (
 
+    <>
 
-  {/* Benefits Card */}
+      {/* Header */}
+      <div className="flex items-center mb-4">
 
-  <div className="bg-[#F1FBF8] rounded-xl border border-[#D6F2EC] p-3 text-xs text-gray-700 space-y-2">
+        <div className="bg-[#222222] p-2 rounded-lg mr-3">
+          <User2 className="h-4 w-4 text-white" />
+        </div>
 
-    {/* Reward Highlight */}
-    <div className="bg-white border border-[#D6F2EC] rounded-lg px-3 py-2 text-center font-semibold text-[#2CBC9C]">
-      Earn <span className="text-gray-900">100 NeuCoins</span> on your first login
-    </div>
+        <div>
 
-    <div>• Earn NeuCoins on every purchase</div>
-    <div>• Track your orders and digital receipts</div>
-    <div>• Access exclusive Tata member offers</div>
+          <div className="text-sm font-semibold text-gray-900">
+            Create Your Next Account
+          </div>
 
-  </div>
+          <div className="text-xs text-gray-500">
+            Save your details for faster shopping and order management.
+          </div>
 
+        </div>
 
-  {/* CTA */}
+      </div>
 
-  <button
-    onClick={openTataNeu}
-    className="w-full mt-3 bg-[#2CBC9C] text-white h-10 text-xs font-semibold rounded-xl active:scale-[0.98]"
-  >
-    Install Tata Neu App
-  </button>
+      {/* Benefits */}
+      <div className="bg-[#F8F8F8] border border-gray-200 rounded-xl p-3 mb-4">
+
+        <div className="text-xs font-medium text-gray-900 mb-2">
+          Benefits
+        </div>
+
+        <div className="space-y-1.5 text-[11px] text-gray-600">
+
+          <div>• Faster checkout on future purchases</div>
+          <div>• Easy order tracking and history</div>
+          <div>• Manage returns and exchanges online</div>
+          <div>• Save delivery addresses securely</div>
+          <div>• Receive updates on new collections and offers</div>
+
+        </div>
+
+      </div>
+
+      {/* Form */}
+      <div className="space-y-3">
+
+        <div className="space-y-1">
+
+          <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
+            Full Name
+          </label>
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={profile.name}
+            onChange={(e) =>
+              setProfile((prev) => ({
+                ...prev,
+                name: e.target.value
+              }))
+            }
+            className="w-full h-10 px-3 text-xs border border-gray-200 rounded-xl focus:outline-none focus:border-[#222222]"
+          />
+
+        </div>
+
+        <div className="space-y-1">
+
+          <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            placeholder="name@example.com"
+            value={profile.email}
+            onChange={(e) =>
+              setProfile((prev) => ({
+                ...prev,
+                email: e.target.value
+              }))
+            }
+            className="w-full h-10 px-3 text-xs border border-gray-200 rounded-xl focus:outline-none focus:border-[#222222]"
+          />
+
+        </div>
+
+        <div className="space-y-1">
+
+          <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
+            Mobile Number
+          </label>
+
+          <input
+            type="tel"
+            placeholder="+91 XXXXX XXXXX"
+            value={profile.mobile}
+            onChange={(e) =>
+              setProfile((prev) => ({
+                ...prev,
+                mobile: e.target.value
+              }))
+            }
+            className="w-full h-10 px-3 text-xs border border-gray-200 rounded-xl focus:outline-none focus:border-[#222222]"
+          />
+
+        </div>
+
+      </div>
+
+      {/* CTA */}
+      <button
+        className="w-full mt-4 bg-[#222222] text-white h-11 text-xs font-semibold rounded-xl transition active:scale-[0.98]"
+        onClick={handleProfileUpdate}
+      >
+        Save Details
+      </button>
+
+      {/* Footer */}
+      <div className="text-[10px] text-gray-400 text-center mt-3">
+        Your details help us manage orders, returns and future purchases more efficiently.
+      </div>
+
+    </>
+
+  )}
 
 </div>
           
-          {/* Profile / Rewards Activation Section */}
-
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
-
-{profileUpdateSuccess ? (
-
-
-<div className="text-center py-4 bg-[#F1FBF8] rounded-xl border border-[#D6F2EC]">
-
-  <div className="w-12 h-12 bg-[#D6F2EC] rounded-full flex items-center justify-center mx-auto mb-3">
-
-    <svg
-      className="w-6 h-6 text-[#2CBC9C]"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"></path>
-    </svg>
-
-  </div>
-
-  <div className="text-sm font-semibold text-gray-900 mb-1">
-    Profile Saved Successfully
-  </div>
-
-  <div className="text-xs text-gray-600">
-    Your details are now linked to this purchase for warranty, installation updates and rewards tracking.
-  </div>
-
-</div>
-
-
-) : (
-
-
-<>
-
-  {/* Header */}
-  <div className="flex items-center mb-3">
-
-    <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-      <User2 className="h-4 w-4 text-white" />
-    </div>
-
-    <div>
-      <div className="text-sm font-semibold text-gray-900">
-        Join Croma Loyalty
-      </div>
-
-      <div className="text-xs text-gray-500">
-        Link your profile for warranty, updates and rewards.
-      </div>
-    </div>
-
-  </div>
-
-
-  {/* Form */}
-  <div className="space-y-3">
-
-    <div className="space-y-1">
-
-      <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
-        Full Name
-      </label>
-
-      <input
-        type="text"
-        placeholder="Your Name"
-        value={profile.name}
-        onChange={(e) =>
-          setProfile((prev) => ({ ...prev, name: e.target.value }))
-        }
-        className="w-full h-10 px-3 text-xs border border-gray-200 rounded-lg focus:outline-none focus:border-[#2CBC9C]"
-      />
-
-    </div>
-
-
-    <div className="space-y-1">
-
-      <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
-        Email Address
-      </label>
-
-      <input
-        type="email"
-        placeholder="name@example.com"
-        value={profile.email}
-        onChange={(e) =>
-          setProfile((prev) => ({ ...prev, email: e.target.value }))
-        }
-        className="w-full h-10 px-3 text-xs border border-gray-200 rounded-lg focus:outline-none focus:border-[#2CBC9C]"
-      />
-
-    </div>
-
-
-    <div className="space-y-1">
-
-      <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
-        Mobile Number
-      </label>
-
-      <input
-        type="tel"
-        placeholder="+91 ..."
-        value={profile.mobile}
-        onChange={(e) =>
-          setProfile((prev) => ({ ...prev, mobile: e.target.value }))
-        }
-        className="w-full h-10 px-3 text-xs border border-gray-200 rounded-lg focus:outline-none focus:border-[#2CBC9C]"
-      />
-
-    </div>
-
-  </div>
-
-
-  {/* CTA */}
-  <button
-    className="w-full mt-4 bg-[#2CBC9C] text-white h-11 text-xs font-semibold rounded-xl shadow-md transition active:scale-[0.98]"
-    onClick={handleProfileUpdate}
-  >
-    Save Details
-  </button>
-
-
-  {/* Helper Text */}
-  <div className="text-[10px] text-gray-400 text-center mt-2">
-    Your information helps us provide warranty support, installation updates and exclusive offers.
-  </div>
-
-</>
-
-
-)}
-
-</div>
-
-          {/* Loyalty / NeuCoins Section */}
-
+          {/* Next Rewards */}
 <div className="bg-white rounded-2xl shadow-md border border-gray-200 mt-4 mx-3 overflow-hidden">
 
   <div className="p-4">
 
+    {/* Header */}
+    <div className="flex items-center mb-4">
 
-{/* Header */}
-<div className="flex items-center mb-4">
+      <div className="bg-[#222222] p-2 rounded-lg mr-3">
+        <Sparkles className="h-4 w-4 text-white" />
+      </div>
 
-  <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-    <Sparkles className="h-4 w-4 text-white" />
-  </div>
+      <div>
 
-  <div>
-    <div className="text-sm font-semibold text-gray-900">
-      NeuCoins Rewards
+        <div className="text-sm font-semibold text-gray-900">
+          Next Rewards
+        </div>
+
+        <div className="text-xs text-gray-500">
+          Earn points and unlock member benefits
+        </div>
+
+      </div>
+
     </div>
 
-    <div className="text-xs text-gray-500">
-      Earn rewards across the Tata Neu ecosystem
+    {/* Stats */}
+    <div className="grid grid-cols-3 gap-3 mb-4">
+
+      <div className="bg-[#F8F8F8] rounded-xl p-3 text-center border border-gray-200">
+
+        <div className="text-lg font-semibold text-[#222222]">
+          +132
+        </div>
+
+        <div className="text-xs text-gray-600">
+          Points Earned
+        </div>
+
+      </div>
+
+      <div className="bg-[#F8F8F8] rounded-xl p-3 text-center border border-gray-200">
+
+        <div className="text-lg font-semibold text-[#222222]">
+          1,840
+        </div>
+
+        <div className="text-xs text-gray-600">
+          Total Points
+        </div>
+
+      </div>
+
+      <div className="bg-[#F8F8F8] rounded-xl p-3 text-center border border-gray-200">
+
+        <div className="text-lg font-semibold text-[#222222]">
+          Silver
+        </div>
+
+        <div className="text-xs text-gray-600">
+          Current Tier
+        </div>
+
+      </div>
+
     </div>
-  </div>
 
-</div>
+    {/* Tier Progress */}
+    <div className="bg-[#F8F8F8] rounded-xl p-4 border border-gray-200">
 
+      <div className="flex justify-between text-xs text-gray-600 mb-2">
 
-{/* Overview Stats */}
-<div className="grid grid-cols-3 gap-3 mb-4">
+        <span>Progress to Gold</span>
 
-  <div className="bg-[#F1FBF8] rounded-xl p-3 text-center border border-[#D6F2EC]">
-    <div className="text-lg font-semibold text-[#2CBC9C]">+669</div>
-    <div className="text-xs text-gray-600">Coins Earned</div>
-  </div>
+        <span>1,840 / 3,000</span>
 
-  <div className="bg-[#F1FBF8] rounded-xl p-3 text-center border border-[#D6F2EC]">
-    <div className="text-lg font-semibold text-[#2CBC9C]">4,280</div>
-    <div className="text-xs text-gray-600">Total Coins</div>
-  </div>
+      </div>
 
-  <div className="bg-[#F1FBF8] rounded-xl p-3 text-center border border-[#D6F2EC]">
-    <div className="text-lg font-semibold text-[#2CBC9C]">Gold</div>
-    <div className="text-xs text-gray-600">Member Tier</div>
-  </div>
+      <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
 
-</div>
+        <div
+          className="h-full bg-[#222222] rounded-full"
+          style={{ width: "61%" }}
+        />
 
+      </div>
 
-{/* Tier Progress */}
-<div className="bg-[#F1FBF8] rounded-xl p-4 border border-[#D6F2EC]">
+      <div className="text-xs text-gray-600 mt-3">
 
-  <div className="flex justify-between text-xs text-gray-600 mb-2">
-    <span>Progress to Platinum</span>
-    <span>4280 / 6000</span>
-  </div>
+        Only{" "}
+        <span className="font-semibold text-[#222222]">
+          1,160 points
+        </span>{" "}
+        away from Gold status.
 
-  <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
+      </div>
 
-    <div
-      className="h-full bg-[#2CBC9C] rounded-full"
-      style={{ width: "71%" }}
-    />
+    </div>
 
-  </div>
+    {/* Tier Overview */}
+    <div className="mt-4 grid grid-cols-3 gap-2">
 
-  <div className="text-xs text-gray-600 mt-2">
-    Only <span className="font-semibold text-[#2CBC9C]">1,720 coins</span> away from Platinum benefits.
-  </div>
+      <div className="border border-gray-200 rounded-lg p-2 text-center">
 
-</div>
+        <div className="text-xs font-semibold text-gray-700">
+          Bronze
+        </div>
 
+        <div className="text-[10px] text-gray-500 mt-1">
+          0+
+        </div>
 
-{/* Member Benefit */}
-<div className="mt-4 bg-gray-50 rounded-xl border border-gray-200 p-3 text-center">
+      </div>
 
-  <div className="text-xs text-gray-600">
-    Gold members enjoy priority service, exclusive offers and faster NeuCoins rewards.
-  </div>
+      <div className="border-2 border-[#222222] rounded-lg p-2 text-center bg-[#F8F8F8]">
 
-</div>
+        <div className="text-xs font-semibold text-[#222222]">
+          Silver
+        </div>
 
+        <div className="text-[10px] text-gray-500 mt-1">
+          1,000+
+        </div>
+
+      </div>
+
+      <div className="border border-gray-200 rounded-lg p-2 text-center">
+
+        <div className="text-xs font-semibold text-gray-700">
+          Gold
+        </div>
+
+        <div className="text-[10px] text-gray-500 mt-1">
+          3,000+
+        </div>
+
+      </div>
+
+    </div>
+
+    {/* Member Benefits */}
+    <div className="mt-4 bg-[#F8F8F8] rounded-xl border border-gray-200 p-3">
+
+      <div className="text-xs font-semibold text-gray-900 mb-2">
+        Silver Member Benefits
+      </div>
+
+      <div className="space-y-1 text-[11px] text-gray-600">
+
+        <div>• Earn points on every purchase</div>
+        <div>• Exclusive member offers</div>
+        <div>• Birthday reward vouchers</div>
+        <div>• Early access to selected collections</div>
+
+      </div>
+
+    </div>
 
   </div>
 
