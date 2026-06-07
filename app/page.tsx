@@ -1415,176 +1415,182 @@ Powered by RDEP
 </div>
           
 {/* Feedback Section */}
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
+  {feedbackSubmitted ? (
 
-{feedbackSubmitted ? (
+    <div className="text-center py-6 bg-[#F8F8F8] rounded-xl border border-gray-200">
 
-<div className="text-center py-6 bg-[#F1FBF8] rounded-xl border border-[#D6F2EC]">
+      <div className="w-12 h-12 bg-[#222222] rounded-full flex items-center justify-center mx-auto mb-3">
 
-  <div className="w-12 h-12 bg-[#D6F2EC] rounded-full flex items-center justify-center mx-auto mb-3">
+        <svg
+          className="w-6 h-6 text-white"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2.5"
+            d="M5 13l4 4L19 7"
+          />
+        </svg>
 
-    <svg
-      className="w-6 h-6 text-[#2CBC9C]"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7"/>
-    </svg>
-
-  </div>
-
-  <div className="text-sm font-semibold text-gray-900 mb-1">
-    Thanks for your feedback!
-  </div>
-
-  <div className="text-xs text-gray-600">
-    Your feedback helps us improve the Croma shopping experience.
-  </div>
-
-</div>
-
-) : (
-
-<div className="space-y-4">
-
-  {/* Header */}
-  <div className="flex items-center">
-
-    <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-      <Star className="h-4 w-4 text-white" />
-    </div>
-
-    <h3 className="text-base font-semibold text-gray-900">
-      Rate Your Shopping Experience
-    </h3>
-
-  </div>
-
-
-  {/* Star Rating */}
-  <div className="flex justify-center gap-3 py-2">
-
-    {[1,2,3,4,5].map((star) => (
-
-      <button
-        key={star}
-        onClick={() => {
-          setRating(star)
-          setSelectedTags([])
-        }}
-        className="transition-transform active:scale-90"
-      >
-
-        <Star
-          className={`h-8 w-8 ${
-            star <= rating
-              ? "fill-[#2CBC9C] text-[#2CBC9C]"
-              : "text-gray-300"
-          }`}
-        />
-
-      </button>
-
-    ))}
-
-  </div>
-
-
-  {/* Dynamic Feedback Tags */}
-  {rating > 0 && (
-
-    <div className="space-y-2">
-
-      <div className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">
-        Tell us more
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="text-sm font-semibold text-gray-900 mb-1">
+        Thank you for your feedback
+      </div>
 
-        {(rating >= 4
-          ? [
-              "Great product quality",
-              "Helpful staff",
-              "Smooth checkout",
-              "Fast billing",
-              "Good value",
-              "Easy installation",
-            ]
-          : [
-              "Long checkout time",
-              "Product not available",
-              "Staff assistance needed",
-              "Price higher than expected",
-              "Installation delay",
-              "Packaging issue",
-            ]
-        ).map((item) => (
+      <div className="text-xs text-gray-600">
+        Your review helps us improve the Next shopping experience.
+      </div>
+
+    </div>
+
+  ) : (
+
+    <div className="space-y-4">
+
+      {/* Header */}
+      <div className="flex items-center">
+
+        <div className="bg-[#222222] p-2 rounded-lg mr-3">
+          <Star className="h-4 w-4 text-white" />
+        </div>
+
+        <div>
+
+          <h3 className="text-base font-semibold text-gray-900">
+            Rate Your Experience
+          </h3>
+
+          <p className="text-xs text-gray-500">
+            Tell us about your recent purchase
+          </p>
+
+        </div>
+
+      </div>
+
+      {/* Star Rating */}
+      <div className="flex justify-center gap-3 py-2">
+
+        {[1, 2, 3, 4, 5].map((star) => (
 
           <button
-            key={item}
-            onClick={() =>
-              setSelectedTags((prev) =>
-                prev.includes(item)
-                  ? prev.filter((tag) => tag !== item)
-                  : [...prev, item]
-              )
-            }
-            className={`text-[11px] px-3 py-1.5 rounded-full border transition ${
-              selectedTags.includes(item)
-                ? "bg-[#2CBC9C] text-white border-[#2CBC9C]"
-                : "border-gray-200 bg-gray-50"
-            }`}
+            key={star}
+            onClick={() => {
+              setRating(star)
+              setSelectedTags([])
+            }}
+            className="transition-transform active:scale-90"
           >
-            {item}
+
+            <Star
+              className={`h-8 w-8 ${
+                star <= rating
+                  ? "fill-[#222222] text-[#222222]"
+                  : "text-gray-300"
+              }`}
+            />
+
           </button>
 
         ))}
 
       </div>
 
+      {/* Dynamic Feedback Tags */}
+      {rating > 0 && (
+
+        <div className="space-y-2">
+
+          <div className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide">
+            Tell us more
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+
+            {(rating >= 4
+              ? [
+                  "True To Size",
+                  "Great Fit",
+                  "Premium Quality",
+                  "Comfortable",
+                  "Stylish",
+                  "Worth The Price"
+                ]
+              : [
+                  "Sizing Issue",
+                  "Fit Not As Expected",
+                  "Fabric Quality",
+                  "Colour Difference",
+                  "Delivery Delay",
+                  "Value For Money"
+                ]
+            ).map((item) => (
+
+              <button
+                key={item}
+                onClick={() =>
+                  setSelectedTags((prev) =>
+                    prev.includes(item)
+                      ? prev.filter((tag) => tag !== item)
+                      : [...prev, item]
+                  )
+                }
+                className={`text-[11px] px-3 py-1.5 rounded-full border transition ${
+                  selectedTags.includes(item)
+                    ? "bg-[#222222] text-white border-[#222222]"
+                    : "border-gray-200 bg-[#F8F8F8] text-gray-700"
+                }`}
+              >
+                {item}
+              </button>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      )}
+
+      {/* Optional Comment */}
+      <div className="space-y-1">
+
+        <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
+          Additional Comments (Optional)
+        </label>
+
+        <textarea
+          rows={3}
+          placeholder="Tell us about the fit, quality, sizing, delivery or overall shopping experience"
+          className="w-full p-3 text-xs border border-gray-200 rounded-xl focus:ring-1 focus:ring-[#222222] focus:border-[#222222] outline-none resize-none"
+          value={feedbackText}
+          onChange={(e) => setFeedbackText(e.target.value)}
+        />
+
+      </div>
+
+      {/* Submit Button */}
+      <button
+        className="w-full bg-[#222222] text-white h-10 text-xs font-semibold rounded-xl transition active:scale-[0.98] disabled:bg-gray-300 disabled:cursor-not-allowed"
+        onClick={handleFeedbackSubmit}
+        disabled={!rating}
+      >
+        Submit Feedback
+      </button>
+
+      <p className="text-[10px] text-center text-gray-400">
+        Your feedback helps us improve future shopping experiences.
+      </p>
+
     </div>
 
   )}
-
-
-  {/* Optional Comment */}
-  <div className="space-y-1">
-
-    <label className="text-[11px] font-semibold text-gray-400 uppercase tracking-wide">
-      Additional Feedback (Optional)
-    </label>
-
-    <textarea
-      rows={3}
-      placeholder="Tell us about your Croma shopping experience"
-      className="w-full p-3 text-xs border border-gray-200 rounded-xl focus:ring-1 focus:ring-[#2CBC9C] focus:border-[#2CBC9C] outline-none resize-none"
-      value={feedbackText}
-      onChange={(e) => setFeedbackText(e.target.value)}
-    />
-
-  </div>
-
-
-  {/* Submit Button */}
-  <button
-    className="w-full bg-[#2CBC9C] text-white h-10 text-xs font-semibold rounded-xl transition active:scale-[0.98]"
-    onClick={handleFeedbackSubmit}
-    disabled={!rating}
-  >
-    Submit Feedback
-  </button>
-
-
-  <p className="text-[10px] text-center text-gray-400">
-    Your feedback helps us improve future shopping experiences.
-  </p>
-
-</div>
-
-
-)}
 
 </div>
           
@@ -1699,285 +1705,296 @@ loop: true,
 
 </div>
 
-          {/* Returns & Exchange */}
+         {/* Returns & Exchanges */}
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
+  {returnSubmitted ? (
 
-{returnSubmitted ? (
+    <div className="text-center py-5 bg-[#F8F8F8] rounded-xl border border-gray-200">
 
-<div className="text-center py-4 bg-green-50 rounded-xl border border-green-100">
+      <div className="w-12 h-12 bg-[#222222] rounded-full flex items-center justify-center mx-auto mb-3">
+        <CheckCircle2 className="w-6 h-6 text-white" />
+      </div>
 
-<div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-<CheckCircle2 className="w-6 h-6 text-green-600" />
-</div>
+      <div className="text-sm font-semibold text-gray-900">
+        Request Submitted
+      </div>
 
-<div className="text-sm font-semibold text-gray-900">
-Request Submitted
-</div>
+      <div className="text-xs text-gray-600 mt-1">
+        Reference ID: <span className="font-semibold">{returnRequestId}</span>
+      </div>
 
-<div className="text-xs text-gray-600 mt-1">
-Request ID: <span className="font-semibold">{returnRequestId}</span>
-</div>
+      <div className="text-xs text-gray-500 mt-2">
+        We will review your request and update you shortly.
+      </div>
 
-<div className="text-xs text-green-700 mt-1">
-Our support team will contact you shortly.
-</div>
+    </div>
 
-</div>
+  ) : (
 
-) : (
+    <>
 
-<>
+      {/* Header */}
+      <div className="flex items-center justify-between mb-4">
 
-{/* Header */}
+        <div className="flex items-center">
 
-<div className="flex items-center justify-between mb-3">
+          <div className="bg-[#222222] p-2 rounded-lg mr-3">
+            <RotateCcw className="h-4 w-4 text-white" />
+          </div>
 
-<div className="flex items-center">
+          <div>
 
-<div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-<RotateCcw className="h-4 w-4 text-white" />
-</div>
+            <div className="text-sm font-semibold text-gray-900">
+              Returns & Exchanges
+            </div>
 
-<div>
-<div className="text-sm font-semibold text-gray-900">
-Returns & Exchange
-</div>
+            <div className="text-xs text-gray-500">
+              Request a return or exchange for an item from this order
+            </div>
 
-<div className="text-xs text-gray-500">
-Request a return or exchange for your product
-</div>
-</div>
+          </div>
 
-</div>
+        </div>
 
-<button
-onClick={() => setShowReturnPanel(!showReturnPanel)}
-className="text-xs font-medium text-[#2CBC9C]"
->
-{showReturnPanel ? "Close" : "Start"}
-</button>
+        <button
+          onClick={() => setShowReturnPanel(!showReturnPanel)}
+          className="text-xs font-medium text-[#222222]"
+        >
+          {showReturnPanel ? "Close" : "Start"}
+        </button>
 
-</div>
+      </div>
 
+      {/* Policy Banner */}
+      <div className="mb-4 bg-[#F8F8F8] border border-gray-200 rounded-xl p-3">
 
-{showReturnPanel && (
+        <div className="text-xs font-medium text-gray-900">
+          Return Policy
+        </div>
 
-<div className="space-y-4">
+        <div className="text-[11px] text-gray-600 mt-1">
+          Eligible items can be returned or exchanged within 28 days of delivery, subject to product condition and policy requirements.
+        </div>
 
-{/* Product Selection */}
+      </div>
 
-<div>
+      {showReturnPanel && (
 
-<div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
-Select Product
-</div>
+        <div className="space-y-4">
 
-<div className="space-y-2">
+          {/* Product Selection */}
+          <div>
 
-{currentReceipt.items.map((product) => (
+            <div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
+              Select Item
+            </div>
 
-<button
-key={product.id}
-onClick={() => {
-setSelectedProduct(product.id)
-setReturnType(null)
-setReturnReason("")
-}}
-className={`w-full text-left p-3 rounded-xl border ${
-selectedProduct === product.id
-? "border-[#2CBC9C] bg-[#F1FBF8]"
-: "border-gray-200"
-}`}
->
+            <div className="space-y-2">
 
-<div className="text-sm font-medium text-gray-900">
-{product.name}
-</div>
+              {currentReceipt.items.map((product) => (
 
-<div className="text-[11px] text-gray-500">
-{product.variant}
-</div>
+                <button
+                  key={product.id}
+                  onClick={() => {
+                    setSelectedProduct(product.id)
+                    setReturnType(null)
+                    setReturnReason("")
+                  }}
+                  className={`w-full text-left p-3 rounded-xl border transition ${
+                    selectedProduct === product.id
+                      ? "border-[#222222] bg-[#F8F8F8]"
+                      : "border-gray-200 bg-white"
+                  }`}
+                >
+
+                  <div className="text-sm font-medium text-gray-900">
+                    {product.name}
+                  </div>
+
+                  <div className="text-[11px] text-gray-500 mt-1">
+                    {product.color} • Size {product.size}
+                  </div>
+
+                </button>
 
-</button>
+              ))}
+
+            </div>
 
-))}
+          </div>
+
+          {/* Action Type */}
+          {selectedProduct !== null && (
+
+            <div>
+
+              <div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
+                Select Action
+              </div>
+
+              <div className="flex gap-2">
+
+                <button
+                  onClick={() => setReturnType("return")}
+                  className={`flex-1 border rounded-xl py-2.5 text-xs font-medium ${
+                    returnType === "return"
+                      ? "border-[#222222] bg-[#F8F8F8] text-[#222222]"
+                      : "border-gray-200"
+                  }`}
+                >
+                  Return Item
+                </button>
 
-</div>
-
-</div>
-
-
-{/* Action Type */}
-
-{selectedProduct !== null && (
-
-<div>
-
-<div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
-Action Type
-</div>
-
-<div className="flex gap-2">
-
-<button
-onClick={() => setReturnType("return")}
-className={`flex-1 border rounded-lg py-2 text-xs ${
-returnType === "return"
-? "border-[#2CBC9C] bg-[#F1FBF8] text-[#2CBC9C]"
-: "border-gray-200"
-}`}
->
-Return
-</button>
-
-<button
-onClick={() => setReturnType("exchange")}
-className={`flex-1 border rounded-lg py-2 text-xs ${
-returnType === "exchange"
-? "border-[#2CBC9C] bg-[#F1FBF8] text-[#2CBC9C]"
-: "border-gray-200"
-}`}
->
-Exchange
-</button>
-
-</div>
-
-</div>
-
-)}
-
-
-{/* Reason */}
-
-{returnType && (
-
-<div>
-
-<div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
-Reason
-</div>
-
-<div className="flex flex-wrap gap-2">
-
-{[
-"Defective Product",
-"Wrong Item",
-"Damaged Packaging",
-"Not Satisfied",
-"Other"
-].map((reason) => (
-
-<button
-key={reason}
-onClick={() => setReturnReason(reason)}
-className={`text-[11px] px-3 py-1 rounded-full border ${
-returnReason === reason
-? "bg-[#2CBC9C] text-white border-[#2CBC9C]"
-: "border-gray-200"
-}`}
->
-{reason}
-</button>
-
-))}
-
-</div>
-
-</div>
-
-)}
-
-
-{/* Comment */}
-
-{returnReason && (
-
-<div>
-
-<label className="text-[11px] font-semibold text-gray-500 uppercase">
-Additional Details
-</label>
-
-<textarea
-rows={3}
-placeholder="Tell us more about the issue"
-className="w-full mt-1 p-2 text-xs border border-gray-200 rounded-lg focus:outline-none focus:border-[#2CBC9C]"
-value={returnComment}
-onChange={(e) => setReturnComment(e.target.value)}
-/>
-
-</div>
-
-)}
-
-
-{/* Refund */}
-
-{returnType === "return" && returnReason && (
-
-<div>
-
-<div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
-Refund Method
-</div>
-
-<div className="flex gap-2">
-
-<button
-onClick={() => setRefundMethod("original")}
-className={`flex-1 border rounded-lg py-2 text-xs ${
-refundMethod === "original"
-? "border-[#2CBC9C] bg-[#F1FBF8]"
-: "border-gray-200"
-}`}
->
-Original Payment
-</button>
-
-<button
-onClick={() => setRefundMethod("store")}
-className={`flex-1 border rounded-lg py-2 text-xs ${
-refundMethod === "store"
-? "border-[#2CBC9C] bg-[#F1FBF8]"
-: "border-gray-200"
-}`}
->
-Store Credit
-</button>
-
-</div>
-
-</div>
-
-)}
-
-
-{/* Submit */}
-
-{returnReason && (
-
-<button
-onClick={() => {
-const id = generateReturnId()
-setReturnRequestId(id)
-setReturnSubmitted(true)
-}}
-className="w-full bg-[#2CBC9C] text-white h-10 text-xs font-semibold rounded-xl active:scale-[0.98]"
->
-Submit Request
-</button>
-
-)}
-
-</div>
-
-)}
-
-</>
-
-)}
+                <button
+                  onClick={() => setReturnType("exchange")}
+                  className={`flex-1 border rounded-xl py-2.5 text-xs font-medium ${
+                    returnType === "exchange"
+                      ? "border-[#222222] bg-[#F8F8F8] text-[#222222]"
+                      : "border-gray-200"
+                  }`}
+                >
+                  Exchange Item
+                </button>
+
+              </div>
+
+            </div>
+
+          )}
+
+          {/* Reason */}
+          {returnType && (
+
+            <div>
+
+              <div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
+                Reason
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+
+                {(returnType === "exchange"
+                  ? [
+                      "Need Different Size",
+                      "Need Different Colour",
+                      "Fit Not As Expected",
+                      "Style Preference",
+                      "Other"
+                    ]
+                  : [
+                      "Fit Not As Expected",
+                      "Size Issue",
+                      "Colour Different",
+                      "Quality Concern",
+                      "Changed My Mind",
+                      "Other"
+                    ]
+                ).map((reason) => (
+
+                  <button
+                    key={reason}
+                    onClick={() => setReturnReason(reason)}
+                    className={`text-[11px] px-3 py-1.5 rounded-full border transition ${
+                      returnReason === reason
+                        ? "bg-[#222222] text-white border-[#222222]"
+                        : "border-gray-200 bg-white text-gray-700"
+                    }`}
+                  >
+                    {reason}
+                  </button>
+
+                ))}
+
+              </div>
+
+            </div>
+
+          )}
+
+          {/* Comments */}
+          {returnReason && (
+
+            <div>
+
+              <label className="text-[11px] font-semibold text-gray-500 uppercase">
+                Additional Details
+              </label>
+
+              <textarea
+                rows={3}
+                placeholder="Tell us more about your request"
+                className="w-full mt-1 p-3 text-xs border border-gray-200 rounded-xl focus:outline-none focus:border-[#222222]"
+                value={returnComment}
+                onChange={(e) => setReturnComment(e.target.value)}
+              />
+
+            </div>
+
+          )}
+
+          {/* Refund Method */}
+          {returnType === "return" && returnReason && (
+
+            <div>
+
+              <div className="text-[11px] font-semibold text-gray-500 uppercase mb-2">
+                Refund Method
+              </div>
+
+              <div className="flex gap-2">
+
+                <button
+                  onClick={() => setRefundMethod("original")}
+                  className={`flex-1 border rounded-xl py-2.5 text-xs font-medium ${
+                    refundMethod === "original"
+                      ? "border-[#222222] bg-[#F8F8F8]"
+                      : "border-gray-200"
+                  }`}
+                >
+                  Original Payment Method
+                </button>
+
+                <button
+                  onClick={() => setRefundMethod("store")}
+                  className={`flex-1 border rounded-xl py-2.5 text-xs font-medium ${
+                    refundMethod === "store"
+                      ? "border-[#222222] bg-[#F8F8F8]"
+                      : "border-gray-200"
+                  }`}
+                >
+                  Store Credit
+                </button>
+
+              </div>
+
+            </div>
+
+          )}
+
+          {/* Submit */}
+          {returnReason && (
+
+            <button
+              onClick={() => {
+                const id = generateReturnId()
+                setReturnRequestId(id)
+                setReturnSubmitted(true)
+              }}
+              className="w-full bg-[#222222] text-white h-10 text-xs font-semibold rounded-xl active:scale-[0.98]"
+            >
+              Submit Request
+            </button>
+
+          )}
+
+        </div>
+
+      )}
+
+    </>
+
+  )}
 
 </div>
 
