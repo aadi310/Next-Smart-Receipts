@@ -2591,171 +2591,201 @@ Powered by RDEP
           
 
       {/* Social Media & Store Details */}
+<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4">
 
-<div className="bg-white rounded-2xl border border-gray-200 shadow-md mx-3 mt-4 p-4 font-poppins">
-
-{/* Header */}
-
+  {/* Header */}
   <div className="flex items-center mb-4">
 
-<div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-  <Share2 className="h-4 w-4 text-white" />
-</div>
+    <div className="bg-[#222222] p-2 rounded-lg mr-3">
+      <Share2 className="h-4 w-4 text-white" />
+    </div>
 
-<h3 className="text-sm font-semibold text-gray-900">
-  Stay Connected
-</h3>
+    <h3 className="text-sm font-semibold text-gray-900">
+      Stay Connected
+    </h3>
 
   </div>
 
-{/* Social Links */}
-
+  {/* Social Links */}
   <div className="flex justify-center space-x-6 mb-4">
 
-{/* Instagram */}
-<button
-  onClick={() => handleSocialLink("https://www.instagram.com/croma.retail/")}
-  className="flex flex-col items-center"
->
-  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 flex items-center justify-center mb-1">
-    <Instagram className="h-4 w-4 text-white" />
-  </div>
+    {/* Instagram */}
+    <button
+      onClick={() =>
+        handleSocialLink("https://www.instagram.com/nextofficial/?hl=en")
+      }
+      className="flex flex-col items-center"
+    >
 
-  <span className="text-[11px] font-medium text-gray-700">
-    Instagram
-  </span>
-</button>
+      <div className="w-9 h-9 rounded-full bg-[#222222] flex items-center justify-center mb-1">
 
+        <Instagram className="h-4 w-4 text-white" />
 
-{/* Facebook */}
-<button
-  onClick={() => handleSocialLink("https://www.facebook.com/CromaRetail/")}
-  className="flex flex-col items-center"
->
-  <div className="w-9 h-9 rounded-full bg-[#1877F2] flex items-center justify-center mb-1">
-    <Facebook className="h-4 w-4 text-white" />
-  </div>
+      </div>
 
-  <span className="text-[11px] font-medium text-gray-700">
-    Facebook
-  </span>
-</button>
+      <span className="text-[11px] font-medium text-gray-700">
+        Instagram
+      </span>
 
+    </button>
 
-{/* Website */}
-<button
-  onClick={() => handleSocialLink("https://www.croma.com")}
-  className="flex flex-col items-center"
->
-  <div className="w-9 h-9 rounded-full bg-[#2CBC9C] flex items-center justify-center mb-1">
-    <ExternalLink className="h-4 w-4 text-white" />
-  </div>
+    {/* Facebook */}
+    <button
+      onClick={() =>
+        handleSocialLink("https://www.facebook.com/nextofficial/")
+      }
+      className="flex flex-col items-center"
+    >
 
-  <span className="text-[11px] font-medium text-gray-700">
-    Website
-  </span>
-</button>
+      <div className="w-9 h-9 rounded-full bg-[#222222] flex items-center justify-center mb-1">
 
-  </div>
+        <Facebook className="h-4 w-4 text-white" />
 
-{/* Store Location */}
+      </div>
 
-  <div className="text-xs text-gray-600 text-center mb-3 bg-gray-50 p-3 rounded-xl">
+      <span className="text-[11px] font-medium text-gray-700">
+        Facebook
+      </span>
 
-<button
-  onClick={() => setShowStoreLocation(!showStoreLocation)}
-  className="w-full flex items-center justify-center mb-2 hover:text-[#2CBC9C] transition-colors"
->
-  <MapPin className="h-3 w-3 mr-1 text-[#2CBC9C]" />
+    </button>
 
-  <span className="font-semibold text-[#2CBC9C]">
-    Croma {currentReceipt.branch}, Bengaluru {showStoreLocation ? "▲" : "▼"}
-  </span>
+    {/* Website */}
+    <button
+      onClick={() =>
+        handleSocialLink("https://www.nextdirect.com/in/en")
+      }
+      className="flex flex-col items-center"
+    >
 
-</button>
+      <div className="w-9 h-9 rounded-full bg-[#222222] flex items-center justify-center mb-1">
 
-{showStoreLocation && (
+        <ExternalLink className="h-4 w-4 text-white" />
 
-  <div className="space-y-0.5">
+      </div>
 
-    <p className="font-semibold text-gray-900">
-      Croma Retail Store
-    </p>
+      <span className="text-[11px] font-medium text-gray-700">
+        Website
+      </span>
 
-    <p>{currentReceipt.branch}</p>
-
-    <p>Bengaluru, Karnataka</p>
-
-    <p>India</p>
-
-    <p className="mt-2 text-[10px]">
-      GSTIN: 29ABCDE1234F1Z5
-    </p>
-
-    <p className="mt-1 text-[#2CBC9C] font-semibold">
-      Store Associate: {currentReceipt.associate}
-    </p>
+    </button>
 
   </div>
 
-)}
+  {/* Store / Order Details */}
+  <div className="text-xs text-gray-600 text-center mb-3 bg-[#F8F8F8] border border-gray-200 p-3 rounded-xl">
+
+    <button
+      onClick={() => setShowStoreLocation(!showStoreLocation)}
+      className="w-full flex items-center justify-center mb-2 transition-colors"
+    >
+
+      <MapPin className="h-3 w-3 mr-1 text-[#222222]" />
+
+      <span className="font-semibold text-[#222222]">
+        Next Customer Services {showStoreLocation ? "▲" : "▼"}
+      </span>
+
+    </button>
+
+    {showStoreLocation && (
+
+      <div className="space-y-0.5">
+
+        <p className="font-semibold text-gray-900">
+          Next Retail India
+        </p>
+
+        <p>
+          UB City Business Tower
+        </p>
+
+        <p>
+          Vittal Mallya Road
+        </p>
+
+        <p>
+          Bengaluru, Karnataka 560001
+        </p>
+
+        <p>
+          India
+        </p>
+
+        <p className="mt-2 text-[10px]">
+          Order Ref: {currentReceipt.id}
+        </p>
+
+        <p className="mt-1 font-semibold text-[#222222]">
+          Sales Associate: {currentReceipt.associate}
+        </p>
+
+      </div>
+
+    )}
 
   </div>
 
-{/* Terms */}
-<button
-className="w-full text-xs text-gray-500 hover:text-[#2CBC9C] h-6 font-medium"
-onClick={() => setShowTerms(!showTerms)}
+  {/* Terms */}
+  <button
+    className="w-full text-xs text-gray-500 hover:text-[#222222] h-6 font-medium"
+    onClick={() => setShowTerms(!showTerms)}
+  >
 
->
-
-Terms & Conditions {showTerms ? "▲" : "▼"}
+    Terms & Conditions {showTerms ? "▲" : "▼"}
 
   </button>
 
-{showTerms && (
+  {showTerms && (
 
-<div className="text-[11px] text-gray-500 mt-2 space-y-1 px-2 font-medium">
+    <div className="text-[11px] text-gray-500 mt-2 space-y-1 px-2 font-medium">
 
-  <p>• Products sold are subject to manufacturer warranty terms.</p>
+      <p>
+        • Returns and exchanges are subject to the applicable return policy.
+      </p>
 
-  <p>• Installation and service timelines may vary by location.</p>
+      <p>
+        • Products must be returned in original condition where applicable.
+      </p>
 
-  <p>• Prices shown include applicable GST.</p>
+      <p>
+        • Prices shown include applicable taxes.
+      </p>
 
-  <p>• For service support visit www.croma.com/support.</p>
+      <p>
+        • Promotional offers are subject to availability and may change without notice.
+      </p>
 
-</div>
+    </div>
 
-)}
+  )}
 
-{/* Powered by RDEP */}
-
+  {/* Powered by RDEP */}
   <div className="text-center mt-3 pt-3 border-t border-gray-100">
-<div className="flex items-center justify-center space-x-1">
 
-  <span className="text-xs text-gray-400 font-medium">
-    Powered by
-  </span>
+    <div className="flex items-center justify-center space-x-1">
 
-  <a
-    href="https://www.rdep.io"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center"
-  >
+      <span className="text-xs text-gray-400 font-medium">
+        Powered by
+      </span>
 
-    <Image
-      src="/images/design-mode/RDEP cropped.png"
-      alt="RDEP"
-      width={60}
-      height={16}
-      className="object-contain"
-    />
+      <a
+        href="https://www.rdep.io"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center"
+      >
 
-  </a>
+        <Image
+          src="/images/design-mode/RDEP cropped.png"
+          alt="RDEP"
+          width={60}
+          height={16}
+          className="object-contain"
+        />
 
-</div>
+      </a>
+
+    </div>
 
   </div>
 
@@ -2770,92 +2800,152 @@ Terms & Conditions {showTerms ? "▲" : "▼"}
 
   <div className="fixed inset-0 z-[9999] flex items-center justify-center">
 
-{/* Backdrop */}
-<div
-  className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-  onClick={() => setShowTransactionHistory(false)}
-/>
+    {/* Backdrop */}
+    <div
+      className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+      onClick={() => setShowTransactionHistory(false)}
+    />
 
-{/* Modal */}
-<div className="relative bg-white rounded-2xl w-full max-w-sm mx-4 shadow-2xl border border-gray-200 font-poppins overflow-hidden">
+    {/* Modal */}
+    <div className="relative bg-white rounded-3xl w-full max-w-sm mx-4 shadow-2xl border border-gray-200 overflow-hidden">
 
-  {/* Header */}
-  <div className="flex justify-between items-center p-4 border-b border-gray-100">
+      {/* Header */}
+      <div className="flex justify-between items-center p-4 border-b border-gray-100">
 
-    <div className="flex items-center">
+        <div className="flex items-center">
 
-      <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
-        <History className="h-4 w-4 text-white" />
+          <div className="bg-[#222222] p-2 rounded-lg mr-3">
+            <History className="h-4 w-4 text-white" />
+          </div>
+
+          <div>
+
+            <h3 className="text-sm font-semibold text-gray-900">
+              Order History
+            </h3>
+
+            <p className="text-[11px] text-gray-500">
+              Your recent purchases
+            </p>
+
+          </div>
+
+        </div>
+
+        <button
+          className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition"
+          onClick={() => setShowTransactionHistory(false)}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            className="h-4 w-4 text-gray-500"
+          >
+            <path
+              d="M18 6L6 18M6 6l12 12"
+              stroke="currentColor"
+              strokeWidth="2"
+            />
+          </svg>
+        </button>
+
       </div>
 
-      <h3 className="text-sm font-semibold text-gray-900">
-        Purchase History
-      </h3>
+      {/* Orders */}
+      <div className="max-h-80 overflow-y-auto p-4 space-y-3">
+
+        {transactionHistory.map((transaction) => {
+
+          const isActive = currentReceiptId === transaction.id
+
+          return (
+
+            <button
+              key={transaction.id}
+              onClick={() => {
+                setCurrentReceiptId(transaction.id)
+                setShowTransactionHistory(false)
+                window.scrollTo({ top: 0, behavior: "smooth" })
+              }}
+              className={`w-full flex items-center p-3 rounded-xl border transition ${
+                isActive
+                  ? "border-[#222222] bg-[#F8F8F8]"
+                  : "border-gray-200 bg-white"
+              }`}
+            >
+
+              <div
+                className={`p-2 rounded-lg mr-3 ${
+                  isActive
+                    ? "bg-[#222222]"
+                    : "bg-[#F8F8F8] border border-gray-200"
+                }`}
+              >
+
+                <FileText
+                  className={`h-4 w-4 ${
+                    isActive
+                      ? "text-white"
+                      : "text-[#222222]"
+                  }`}
+                />
+
+              </div>
+
+              <div className="flex-grow text-left">
+
+                <div className="flex items-center gap-2">
+
+                  <span className="text-sm font-semibold text-gray-900">
+                    Next
+                  </span>
+
+                  {isActive && (
+
+                    <span className="text-[10px] bg-[#222222] text-white px-2 py-0.5 rounded-full">
+                      Current
+                    </span>
+
+                  )}
+
+                </div>
+
+                <div className="text-[11px] text-gray-500">
+                  {transaction.date}
+                </div>
+
+                <div className="text-[11px] text-gray-400">
+                  {transaction.branch}
+                </div>
+
+              </div>
+
+              <div className="text-sm font-semibold text-[#222222]">
+                ₹{transaction.amount.toLocaleString("en-IN")}
+              </div>
+
+            </button>
+
+          )
+
+        })}
+
+      </div>
+
+      {/* Footer */}
+      <div className="border-t border-gray-100 px-4 py-3 text-center">
+
+        <p className="text-[10px] text-gray-400">
+          Showing recent orders linked to your account
+        </p>
+
+      </div>
 
     </div>
 
-    <button
-      className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100"
-      onClick={() => setShowTransactionHistory(false)}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        className="h-4 w-4 text-gray-500"
-      >
-        <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2"/>
-      </svg>
-    </button>
-
   </div>
 
-
-  {/* Transaction List */}
-  <div className="max-h-80 overflow-y-auto p-4 space-y-3">
-
-    {transactionHistory.map((transaction) => (
-
-      <button
-        key={transaction.id}
-        onClick={() => {
-          setCurrentReceiptId(transaction.id)
-          setShowTransactionHistory(false)
-          window.scrollTo({ top: 0, behavior: "smooth" })
-        }}
-        className="w-full flex items-center p-3 bg-gray-50 border border-gray-200 rounded-xl hover:border-[#2CBC9C] transition"
-      >
-
-        <div className="bg-white border border-gray-200 p-2 rounded-lg mr-3">
-          <FileText className="h-4 w-4 text-[#2CBC9C]" />
-        </div>
-
-        <div className="flex-grow text-left">
-
-          <div className="text-sm font-semibold text-gray-900">
-            Croma
-          </div>
-
-          <div className="text-[11px] text-gray-500">
-            {transaction.date}
-          </div>
-
-        </div>
-
-        <div className="text-sm font-semibold text-[#2CBC9C]">
-          ₹{transaction.amount.toFixed(2)}
-        </div>
-
-      </button>
-
-    ))}
-
-  </div>
-
-</div>
-
-  </div>
 )}
-
         {/* Refer & Earn Modal */}
         {showReferModal && (
           <div
