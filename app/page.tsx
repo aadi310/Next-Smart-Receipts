@@ -1305,45 +1305,45 @@ Powered by RDEP
 
 
 {/* Delivery Status */}
-<div className="bg-white rounded-2xl shadow-md border border-gray-200 mt-4 mx-3 p-4 font-poppins">
+<div className="bg-white rounded-2xl shadow-md border border-gray-200 mt-4 mx-3 p-4">
 
   {/* Header */}
   <div className="flex items-center justify-between mb-4">
 
     <div className="flex items-center">
 
-      <div className="bg-[#2CBC9C] p-2 rounded-lg mr-3">
+      <div className="bg-[#222222] p-2 rounded-lg mr-3">
         <Truck className="h-4 w-4 text-white" />
       </div>
 
       <div>
+
         <h3 className="text-sm font-semibold text-gray-900">
           Delivery Status
         </h3>
 
         <p className="text-[11px] text-gray-500">
-          Your order is on the way
+          Your order is on its way
         </p>
+
       </div>
 
     </div>
 
-    {/* Status Badge */}
-    <div className="text-[10px] font-semibold bg-[#F1FBF8] text-[#2CBC9C] px-2 py-1 rounded-full">
+    <div className="text-[10px] font-semibold bg-[#F5F5F5] text-[#222222] border border-gray-200 px-2 py-1 rounded-full">
       In Transit
     </div>
 
   </div>
 
-
   {/* Progress Tracker */}
-  <div className="flex items-center justify-between mb-4">
+  <div className="flex items-center justify-between mb-5">
 
     {/* Confirmed */}
     <div className="flex flex-col items-center text-center flex-1">
 
-      <div className="w-8 h-8 rounded-full bg-[#2CBC9C] text-white flex items-center justify-center">
-        <CheckCircle2 className="h-4 w-4"/>
+      <div className="w-8 h-8 rounded-full bg-[#222222] text-white flex items-center justify-center">
+        <CheckCircle2 className="h-4 w-4" />
       </div>
 
       <span className="text-[10px] text-gray-600 mt-1">
@@ -1352,32 +1352,28 @@ Powered by RDEP
 
     </div>
 
-
-    <div className="flex-1 h-[3px] bg-[#2CBC9C]"></div>
-
+    <div className="flex-1 h-[2px] bg-[#222222]"></div>
 
     {/* In Transit */}
     <div className="flex flex-col items-center text-center flex-1">
 
-      <div className="w-8 h-8 rounded-full border-2 border-[#2CBC9C] text-[#2CBC9C] flex items-center justify-center">
-        <Truck className="h-4 w-4"/>
+      <div className="w-8 h-8 rounded-full border-2 border-[#222222] text-[#222222] flex items-center justify-center">
+        <Truck className="h-4 w-4" />
       </div>
 
-      <span className="text-[10px] font-medium text-[#2CBC9C] mt-1">
+      <span className="text-[10px] font-medium text-[#222222] mt-1">
         In Transit
       </span>
 
     </div>
 
-
-    <div className="flex-1 h-[3px] bg-gray-200"></div>
-
+    <div className="flex-1 h-[2px] bg-gray-200"></div>
 
     {/* Delivered */}
     <div className="flex flex-col items-center text-center flex-1">
 
       <div className="w-8 h-8 rounded-full border-2 border-gray-300 text-gray-300 flex items-center justify-center">
-        <MapPin className="h-4 w-4"/>
+        <MapPin className="h-4 w-4" />
       </div>
 
       <span className="text-[10px] text-gray-400 mt-1">
@@ -1388,32 +1384,30 @@ Powered by RDEP
 
   </div>
 
-
   {/* Delivery Info */}
-  <div className="bg-gray-50 rounded-xl border border-gray-200 p-3 text-center mb-3">
+  <div className="bg-[#F8F8F8] rounded-xl border border-gray-200 p-4 text-center mb-4">
 
-    <p className="text-[11px] text-gray-600">
+    <p className="text-[11px] uppercase tracking-wider text-gray-500">
       Estimated Delivery
     </p>
 
-    <p className="text-sm font-semibold text-gray-900">
-      09 Mar 2026
+    <p className="text-sm font-semibold text-gray-900 mt-1">
+      12 Jun 2026
     </p>
 
   </div>
 
-
   {/* Track Button */}
   <a
-    href="https://www.croma.com"
+    href="https://www.nextdirect.com/in/en"
     target="_blank"
     rel="noopener noreferrer"
   >
-    <button className="w-full bg-[#2CBC9C] text-white h-10 text-xs font-semibold rounded-xl flex items-center justify-center gap-1 transition active:scale-[0.98]">
+    <button className="w-full bg-[#222222] text-white h-10 text-xs font-semibold rounded-xl flex items-center justify-center gap-2 transition active:scale-[0.98] hover:bg-[#111111]">
 
       Track Order
 
-      <ExternalLink className="h-3 w-3"/>
+      <ExternalLink className="h-3 w-3" />
 
     </button>
   </a>
