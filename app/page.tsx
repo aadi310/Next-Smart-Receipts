@@ -580,16 +580,16 @@ const receipts = {
   }
 
   const handleEmailReceipt = () => {
-    window.open(`mailto:?subject=Receipt from Domino's Bangalore&body=Receipt ID: ${currentReceipt.id}`)
+    window.open(`mailto:?subject=Receipt from Next Bangalore&body=Receipt ID: ${currentReceipt.id}`)
   }
 
   const handleDownloadReceipt = () => {
     const receiptContent = `
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Croma Digital Receipt</title>
+<title>Next Digital Receipt</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -619,20 +619,21 @@ justify-content:space-between;
 align-items:flex-start;
 margin-bottom:28px;
 padding-bottom:16px;
-border-bottom:3px solid #2CBC9C;
+border-bottom:3px solid #222222;
 }
 
 .company-info h1{
 font-size:30px;
-color:#2CBC9C;
+color:#222222;
 font-weight:700;
+letter-spacing:1px;
 margin-bottom:4px;
 }
 
 .company-info p{
 font-size:12px;
 color:#555;
-line-height:1.4;
+line-height:1.5;
 }
 
 .bill-info{
@@ -646,22 +647,22 @@ margin-bottom:4px;
 
 .bill-id{
 font-weight:600;
-color:#2CBC9C;
+color:#222222;
 }
 
 /* Customer */
 
 .customer-section{
-background:#F1FBF8;
+background:#F8F8F8;
 padding:14px;
-border-left:4px solid #2CBC9C;
+border-left:4px solid #222222;
 border-radius:0 8px 8px 0;
 margin-bottom:22px;
 }
 
 .customer-section h3{
 font-size:15px;
-color:#2CBC9C;
+color:#222222;
 font-weight:600;
 margin-bottom:2px;
 }
@@ -680,7 +681,7 @@ margin-bottom:24px;
 }
 
 .items-table th{
-background:#2CBC9C;
+background:#222222;
 color:white;
 padding:10px 8px;
 text-align:left;
@@ -708,9 +709,10 @@ color:#666;
 
 .item-specs{
 font-size:10px;
-color:#2CBC9C;
+color:#222222;
 margin-top:4px;
-font-weight:600;
+font-weight:500;
+line-height:1.5;
 }
 
 /* Totals */
@@ -727,7 +729,7 @@ font-weight:600;
 
 .totals-table{
 text-align:right;
-min-width:200px;
+min-width:220px;
 }
 
 .totals-table div{
@@ -738,8 +740,8 @@ font-size:13px;
 .net-total{
 font-size:18px;
 font-weight:700;
-color:#2CBC9C;
-border-top:2px solid #2CBC9C;
+color:#222222;
+border-top:2px solid #222222;
 padding-top:6px;
 margin-top:6px;
 }
@@ -756,7 +758,7 @@ color:#555;
 }
 
 .footer strong{
-color:#2CBC9C;
+color:#222222;
 }
 
 .powered{
@@ -769,6 +771,7 @@ font-weight:600;
 @media print{
 body{
 -webkit-print-color-adjust:exact;
+print-color-adjust:exact;
 width:100%;
 padding:0;
 }
@@ -782,26 +785,48 @@ padding:0;
 <div class="receipt-header">
 
 <div class="company-info">
-<h1>Croma</h1>
+
+<h1>NEXT</h1>
+
 <p>
-<strong>Croma Retail Store</strong><br>
-Brigade Road<br>
+<strong>Next Retail India</strong><br>
+UB City Business Tower<br>
+Vittal Mallya Road<br>
 Bengaluru, Karnataka 560001<br>
 India
 </p>
+
 </div>
 
 <div class="bill-info">
-<div><strong>Receipt ID:</strong> <span class="bill-id">CRBLR7891XQ12</span></div>
-<div><strong>Date:</strong> 05-03-2026 19:22</div>
-<div><strong>Store Associate:</strong> Rahul Kumar</div>
+
+<div>
+<strong>Receipt ID:</strong>
+<span class="bill-id">NXTDEL8741MQ52</span>
+</div>
+
+<div>
+<strong>Date:</strong>
+05-03-2026 19:22
+</div>
+
+<div>
+<strong>Sales Associate:</strong>
+Priya Sharma
+</div>
+
 </div>
 
 </div>
 
 <div class="customer-section">
+
 <h3>Customer: ${customerName}</h3>
-<p>Thank you for shopping at Croma!</p>
+
+<p>
+Thank you for shopping with Next.
+</p>
+
 </div>
 
 <table class="items-table">
@@ -810,7 +835,7 @@ India
 <tr>
 <th style="width:50%">Product</th>
 <th style="width:10%">Qty</th>
-<th style="width:15%">Variant</th>
+<th style="width:15%">Style</th>
 <th style="width:12%">Price</th>
 <th style="width:13%">Total</th>
 </tr>
@@ -819,58 +844,144 @@ India
 <tbody>
 
 <tr>
+
 <td>
-<div class="item-name">LG 1.5 Ton Dual Inverter Split AC</div>
-<div class="item-desc">AI Convertible 6-in-1 cooling</div>
-<div class="item-specs">
-Product Code: LGAC15INV26<br>
-Serial: LGAC15X9921<br>
-Warranty: 1 Year Product / 10 Year Compressor
+
+<div class="item-name">
+Blue Straight Fit Motionflex Jeans
 </div>
+
+<div class="item-desc">
+Motionflex performance denim engineered for comfort, shape retention and unrestricted movement.
+</div>
+
+<div class="item-specs">
+Product Code: 228-065<br>
+Colour: Blue<br>
+Size: 34R<br>
+Composition: 66% Cotton, 22% Recycled Polyester, 10% Viscose, 2% Elastane
+</div>
+
 </td>
+
 <td>1</td>
-<td>5 Star 2026 Model</td>
-<td>₹46,990</td>
-<td><strong>₹46,990</strong></td>
+
+<td>Straight Fit</td>
+
+<td>₹4,117</td>
+
+<td>
+<strong>₹4,117</strong>
+</td>
+
 </tr>
 
 <tr>
+
 <td>
-<div class="item-name">Apple AirPods (3rd Generation)</div>
-<div class="item-desc">Spatial audio with dynamic head tracking</div>
-<div class="item-specs">
-Product Code: AIRPODS3<br>
-Serial: APD3X77P21<br>
-Warranty: 1 Year Apple Warranty
+
+<div class="item-name">
+White Floral Puff Sleeve Midi Dress
 </div>
+
+<div class="item-desc">
+Square neckline midi dress with puff sleeves and a shirred back panel.
+</div>
+
+<div class="item-specs">
+Product Code: Y13-574<br>
+Colour: White Floral<br>
+Size: 12<br>
+Composition: Main 100% Cotton, Lining 100% Cotton
+</div>
+
 </td>
+
 <td>1</td>
-<td>Wireless Charging Case</td>
-<td>₹19,900</td>
-<td><strong>₹19,900</strong></td>
+
+<td>Midi Dress</td>
+
+<td>₹6,200</td>
+
+<td>
+<strong>₹6,200</strong>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+
+<div class="item-name">
+Pink Baby Bunny Sleepsuits 3 Pack
+</div>
+
+<div class="item-desc">
+Soft cotton sleepsuits featuring a bunny print design and popper fastening.
+</div>
+
+<div class="item-specs">
+Product Code: H44-213<br>
+Colour: Pink<br>
+Size: 12-18 Months<br>
+Composition: 100% Cotton
+</div>
+
+</td>
+
+<td>1</td>
+
+<td>3 Pack</td>
+
+<td>₹2,911</td>
+
+<td>
+<strong>₹2,911</strong>
+</td>
+
 </tr>
 
 </tbody>
+
 </table>
 
 <div class="totals-section">
 
 <div class="items-count">
-Items Purchased: 2
+Items Purchased: 3
 </div>
 
 <div class="totals-table">
-<div>Subtotal: <strong>₹56,686</strong></div>
-<div>GST: <strong>₹10,204</strong></div>
-<div class="net-total">Total Paid: <strong>₹66,890</strong></div>
+
+<div>
+Subtotal:
+<strong>₹11,210</strong>
+</div>
+
+<div>
+GST:
+<strong>₹2,018</strong>
+</div>
+
+<div class="net-total">
+Total Paid:
+<strong>₹13,228</strong>
+</div>
+
 </div>
 
 </div>
 
 <div class="footer">
 
-<p><strong>Thank you for shopping with Croma!</strong></p>
-<p>Visit www.croma.com for exclusive offers and services.</p>
+<p>
+<strong>Thank you for shopping with Next.</strong>
+</p>
+
+<p>
+Visit www.nextdirect.com/in/en to discover new arrivals and exclusive offers.
+</p>
 
 <div class="powered">
 Powered by RDEP
@@ -880,13 +991,13 @@ Powered by RDEP
 
 </body>
 </html>
-    `
+`
 
     const blob = new Blob([receiptContent], { type: "text/html" })
     const url = URL.createObjectURL(blob)
     const link = document.createElement("a")
     link.href = url
-    link.download = "Croma_Receipt_SK251107001.html"
+    link.download = "Next_Receipt_S7001.html"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -2682,7 +2793,7 @@ Powered by RDEP
       <MapPin className="h-3 w-3 mr-1 text-[#222222]" />
 
       <span className="font-semibold text-[#222222]">
-        Next Customer Services {showStoreLocation ? "▲" : "▼"}
+        Next {showStoreLocation ? "▲" : "▼"}
       </span>
 
     </button>
