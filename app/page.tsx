@@ -924,11 +924,13 @@ Powered by RDEP
     <div className="flex items-start justify-between">
 
       {/* Logo */}
-      <img
-        src="/images/design-mode/new-next-black-logo.svg"
-        alt="Next"
-        className="h-8 w-auto"
-      />
+      <div className="bg-white px-4 py-2 rounded-lg">
+  <img
+    src="/images/design-mode/new-next-black-logo.svg"
+    alt="Next"
+    className="h-6 w-auto"
+  />
+</div>
 
       {/* QR */}
       <div className="bg-white rounded-lg p-2 border border-gray-200">
